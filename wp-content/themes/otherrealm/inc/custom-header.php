@@ -1,6 +1,5 @@
 <?php
 /**
-.
  *
 	<?php the_header_image_tag(); ?>
  *
