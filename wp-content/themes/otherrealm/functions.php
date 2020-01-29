@@ -110,7 +110,7 @@ function otherrealm_widgets_init() {
 		'description'   => esc_html__( 'Add widgets here.', 'otherrealm' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
-		'before_title'  => '<h2  title="about" class="sidebartitle=">',
+		'before_title'  => '<h2 title="about" class="sidebartitle">',
 		'after_title'   => '</h2>',
 	) );
 }

@@ -38,6 +38,8 @@
 				));
 				?>
 			</nav><!-- #site-navigation -->
+			<span class='facebook'><a id='facebook' href='https://www.facebook.com/otherrealm.org/'>Facebook</a> </span>
+			<!-- <h1>!!  !!</h1> -->
 		</header><!-- #masthead -->
 
 		<div id="content" class="site-content">

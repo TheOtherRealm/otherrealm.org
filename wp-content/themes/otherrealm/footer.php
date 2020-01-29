@@ -24,7 +24,7 @@
                 Other Realm LLC
                 <br>
             </a>
-            <a href="https://www.gnu.org/licenses/agpl-3.0.txt" title="If you, for some strange reason, actually want the custom code, just contact me: https://otherrealm.org/contact/"><img alt="Gnu AFFERO  Public License" class="gpl" src="https://www.gnu.org/graphics/agplv3-155x51.png">Custom code (not created by WordPress) is licensed under the GNU Afferō General Public License</a><br>
+            <a href="https://www.gnu.org/licenses/agpl-3.0.txt" title="If you, for some strange reason, actually want the custom code, just contact me: https://otherrealm.org/contact/"><img alt="Custom code (not created by WordPress) is licensed under the Gnu AFFERO  Public License" class="gpl" src="<?php echo get_theme_root_uri('otherrealm'); ?>/otherrealm/img/agplv3-155x51.png"> GNU Afferō General Public License</a><br>
             <a href="./privacy-policy/" title="Privacy Policy">Privacy Policy</a>
         </div>
     </footer>

@@ -48,6 +48,7 @@ a {
 	font-weight: bold;
 	text-decoration: none;
 	color: #2f649c;
+	word-wrap: break-word;
 }
 
 a:active, a:hover, a:focus {
@@ -164,7 +165,7 @@ body, html {
 	z-index: 9999;
 } */
 
-.nav {
+/* .main-navigation {
 	background: white;
 	margin: 0 auto;
 	text-align: center;
@@ -172,7 +173,7 @@ body, html {
 	display: inline-block;
 	width: auto;
 	padding: 0;
-}
+} */
 
 .navImg {
 	width: 75px;
@@ -263,16 +264,13 @@ div.bigLogo {
 	text-align: center;
 	line-height: .8em;
 }
-
 .cc {
 	left: -15em;
 	height: 15px;
 }
-
 .gpl {
-	width: 75px;
+	height: 15px;
 }
-
 .redTitle::first-letter {
 	color: darkred;
 }
@@ -365,7 +363,7 @@ p {
 }
 
 .size-medium {
-	width: 100%;
+	width: 40%;
 	max-width: 480px;
 	/*	margin: auto;*/
 	position: relative;
@@ -432,14 +430,14 @@ p {
 	height: auto;
 }
 
-#block-otherrealm-main-menu ul {
+.menu ul {
 	padding: 0;
 	margin: 0;
 	margin-top:.75em;
 	list-style: none;
 }
 
-#block-otherrealm-main-menu {
+.menu {
 	margin: 2em 5px 5px 5px;
 	padding: 0;
 	margin: 0;
@@ -449,17 +447,14 @@ p {
 	z-index: 1;
 }
 
-#block-otherrealm-main-menu li {
-	padding: .1em;
+.menu li {
+	padding-left: .3em;
 }
 
-#block-otherrealm-content {
+.menu {
 	z-index: 5;
 }
 
-#block-otherrealm-content #block-otherrealm-search {
-	z-index: 0;
-}
 
 .sidebarTitle {
 	color: #220099;
@@ -665,7 +660,13 @@ p {
 	display: none;
 }*/
 
-@media screen and (min-width:960px) {
+@media screen and (max-width:800px) {
+	.facebook{
+		bottom: 5px;
+		position: fixed;
+		right: 4px;
+		top: unset;
+	}
 	/*	.leftNavLinks{
 			border-right: solid #800000;
 			border-bottom: solid #800000;
@@ -699,11 +700,7 @@ p {
 }*/
 
 @media screen and (max-width: 1060px) {
-	/*	.facebook{
-			top: 80px;
-			position: absolute;
-			right: 6px;
-		}*/
+
 	/* .topbar-logo-img{
 		display: none;
 	}
@@ -1036,7 +1033,9 @@ hr {
 	padding: 0;
 	text-align: inherit;
 }
-
+#search-2{
+	text-align: center;
+}
 .alignright {
 	float: right;
 }

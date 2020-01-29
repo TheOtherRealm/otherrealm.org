@@ -47,14 +47,14 @@ for more details: <https://www.gnu.org/licenses/agpl-3.0.txt>.
 			$('.layout-sidebar-first').css('position', 'fixed');
 		}
 		$('#contactTheOtherRealm').click(function () {
-			$.post('https://otherrealm.org/contacttheotherrealm.php?simplewaytopreventspam=1dft334rfgb54t43wb645e4trf4g5654e5rf34v567ju5e64yega5b65eu6i8jrhya34WT5Y67J~``~', function (data) {
+			$.post('http://10.0.0.11/otherrealm.org/wp-content/themes/otherrealm/inc/contacttheotherrealm.php?simplewaytopreventspam=1dft334rfgb54t43wb645e4trf4g5654e5rf34v567ju5e64yega5b65eu6i8jrhya34WT5Y67J~``~', function (data) {
 				// console.log(data);
 				$('#contactTheOtherRealm').attr({
 					href: "mailto:" + data
 				});
 				$('#contactTheOtherRealm').text('Click for email »');
-			}).done(function () {
-				// console.log("done");
+			}).done(function (data) {
+				// console.log(data);
 			}).fail(function () {
 				console.log("fail");
 			}).always(function () {
