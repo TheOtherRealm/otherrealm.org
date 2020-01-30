@@ -6,7 +6,17 @@
  *
  * @package otherrealm
  */
-
+function get_attachment_url_by_slug( $slug ) {
+    $args = array(
+        'post_type' => 'attachment',
+        'name' => sanitize_title( $slug ),
+        'posts_per_page' => 1,
+        'post_status' => 'inherit',
+    );
+    $_header = get_posts( $args );
+    $header = $_header ? array_pop( $_header ) : null;
+    return $header ? wp_get_attachment_url( $header->ID ) : '';
+}
 if ( ! function_exists( 'otherrealm_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.

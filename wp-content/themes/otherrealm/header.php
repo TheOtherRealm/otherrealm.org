@@ -25,7 +25,6 @@
 <body <?php body_class(); ?>>
 	<div id="page" class="site">
 		<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e('Skip to content', 'otherrealm'); ?></a>
-
 		<header id="masthead" class="site-header">
 			<nav id="site-navigation" class="main-navigation">
 				<!-- <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
@@ -33,9 +32,11 @@
 				</button> -->
 				<?php
 				wp_nav_menu(array(
-					'theme_location' => 'menu-1',
-					'menu_id'        => 'primary-menu',
+					'theme_location'	=>	'menu-1',
+					'menu_id'			=>	'primary-menu',
+					'link_before'		=> '!' . get_attachment_url_by_slug('internet') . '!'
 				));
+				// echo  '!'.wp_get_attachment_image( get_the_ID(), 'full' ).'!';
 				?>
 			</nav><!-- #site-navigation -->
 			<span class='facebook'><a id='facebook' href='https://www.facebook.com/otherrealm.org/'>Facebook</a> </span>

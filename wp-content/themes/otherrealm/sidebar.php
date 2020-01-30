@@ -19,7 +19,6 @@ if (!is_active_sidebar('sidebar-1')) {
 <aside class="layout-sidebar-first" id="secondary" role="complementary">
 	<div class="region region-sidebar-first" style="display: block;">
 		<nav role="navigation" aria-labelledby="block-otherrealm-main-menu-menu" id="block-otherrealm-main-menu" class="settings-tray-editable" data-drupal-settingstray="editable">
-
 			<h2 class="visually-hidden" id="block-otherrealm-main-menu-menu">Main navigation</h2>
 			<ul>
 				<li>
@@ -83,10 +82,6 @@ if (!is_active_sidebar('sidebar-1')) {
 
 				</li>
 			</ul>
-
-
 		</nav>
-
 	</div>
-
 </aside>

@@ -14,7 +14,6 @@ function otherrealm_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
-
 	if ( isset( $wp_customize->selective_refresh ) ) {
 		$wp_customize->selective_refresh->add_partial( 'blogname', array(
 			'selector'        => '.site-title a',
@@ -27,7 +26,6 @@ function otherrealm_customize_register( $wp_customize ) {
 	}
 }
 add_action( 'customize_register', 'otherrealm_customize_register' );
-
 /**
  * Render the site title for the selective refresh partial.
  *
@@ -36,7 +34,6 @@ add_action( 'customize_register', 'otherrealm_customize_register' );
 function otherrealm_customize_partial_blogname() {
 	bloginfo( 'name' );
 }
-
 /**
  * Render the site tagline for the selective refresh partial.
  *
@@ -45,7 +42,6 @@ function otherrealm_customize_partial_blogname() {
 function otherrealm_customize_partial_blogdescription() {
 	bloginfo( 'description' );
 }
-
 /**
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
