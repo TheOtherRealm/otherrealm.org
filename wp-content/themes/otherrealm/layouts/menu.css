@@ -1,0 +1,98 @@
+/*
+	Created		: Jan 30, 2020, 5:35:20 PM
+    Author		: Aaron E-J <the at otherrealm.org>
+	Copyright(C): 2020 Other Realm
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the latest version of the GNU Affero General Public License as published by
+	the Free Software Foundation, using at least version 3.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Affero General Public License for more details: <http://www.gnu.org/licenses/>.
+*/
+
+
+.menuTitle {
+	color: #800000;
+}
+.navImg {
+	width: 75px;
+	/**/
+}
+.leftNavLinks {
+	text-decoration: none;
+	text-shadow: 0 2px 2px black;
+	text-align: center;
+	z-index: 0;
+}
+.percent30 {
+	width: 20%;
+	float: right;
+	position: relative;
+}
+.menuImg {
+	width: 75px;
+	height: auto;
+}
+.menu ul {
+	padding: 0;
+	margin: 0;
+	/* margin-top:.75em; */
+	list-style: none;
+}
+.menu {
+	margin: 5px 5px 5px 5px;
+	padding: 0;
+	margin: 0;
+	font-size: 1.5em;
+	min-width: 9em;
+	width: 30%;
+	float: left;
+	z-index: 99;
+	position: relative;
+	background: white;
+}
+.menu li {
+	padding-left: .3em;
+}
+.sidebarTitle {
+	color: #220099;
+	width: inherit;
+}
+#content {
+	z-index: 100;
+	margin-left: 30%;
+	margin-top: 3em;
+	position: relative;
+}
+@media screen and (max-width: 700px) {
+	.menu, .menu>* {
+		display: none;
+		background: white;
+		padding: 0;
+		height: auto;
+		z-index: 9999;
+	}
+	#content {
+		width: 100%;
+		margin: 1%;
+	}
+	.menu {
+		position: absolute;
+		margin: 2em 5px 5px 5px;
+		box-shadow: 3px 3px 2px 1px rgba(0, 0, 0, .7), -1px -1px rgba(0, 0, 0, .1);
+	}
+	#menubar {
+		margin-top: 2.2em;
+	}
+	.box-shadow-menu {
+		display: block;
+		position: absolute;
+		top: -40px;
+		left: 1px;
+		background: white;
+		margin: 0;
+		z-index: 3;
+	}
+}

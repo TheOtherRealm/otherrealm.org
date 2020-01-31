@@ -28,3 +28,4 @@ npm-debug.log*
 /wp-admin
 /wp-includes
 /wp-content/plugins
+/nbproject/private/

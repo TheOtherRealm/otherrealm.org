@@ -12,19 +12,20 @@ if (!is_active_sidebar('sidebar-1')) {
 	return;
 }
 ?>
-
 <aside id="secondary" class="widget-area">
 	<?php dynamic_sidebar('sidebar-1'); ?>
 </aside><!-- #secondary -->
-<aside class="layout-sidebar-first" id="secondary" role="complementary">
+<!--<aside class="layout-sidebar-first" id="secondary" role="complementary">
 	<div class="region region-sidebar-first" style="display: block;">
-		<nav role="navigation" aria-labelledby="block-otherrealm-main-menu-menu" id="block-otherrealm-main-menu" class="settings-tray-editable" data-drupal-settingstray="editable">
+		<nav role="navigation" aria-labelledby="block-otherrealm-main-menu-menu" id="block-otherrealm-main-menu"
+			class="settings-tray-editable" data-drupal-settingstray="editable">
 			<h2 class="visually-hidden" id="block-otherrealm-main-menu-menu">Main navigation</h2>
 			<ul>
 				<li>
 					<p>
 						<a href="/About" title="about" class="sidebartitle=">
-							<img src="/otherrealm.org/web/themes/otherrealm/img/About.png" alt="About" title="About" class="menuImg">
+							<img src="/otherrealm.org/web/themes/otherrealm/img/About.png" alt="About" title="About"
+								class="menuImg">
 							About
 						</a>
 					</p>
@@ -39,18 +40,19 @@ if (!is_active_sidebar('sidebar-1')) {
 							<a href="/governance" data-drupal-link-system-path="node/1">Governance</a>
 						</li>
 					</ul>
-
 				</li>
 				<li>
 					<p>
 						<a href="/Economy" title="economy" class="sidebartitle=">
-							<img src="/otherrealm.org/web/themes/otherrealm/img/Economy.png" alt="Economy" title="Economy" class="menuImg">
+							<img src="/otherrealm.org/web/themes/otherrealm/img/Economy.png" alt="Economy"
+								title="Economy" class="menuImg">
 							Economy
 						</a>
 					</p>
 					<ul>
 						<li>
-							<a href="/StaffingShaftedChaff" title="Satirically Staffing Shafted Chaff" data-drupal-link-system-path="node/9">Shafted Chaff</a>
+							<a href="/StaffingShaftedChaff" title="Satirically Staffing Shafted Chaff"
+								data-drupal-link-system-path="node/9">Shafted Chaff</a>
 						</li>
 						<li>
 							<a href="/IHaveAJob" data-drupal-link-system-path="node/19">I Have a Job</a>
@@ -70,7 +72,8 @@ if (!is_active_sidebar('sidebar-1')) {
 				<li>
 					<p>
 						<a href="/othersites" title="internet" class="sidebartitle=">
-							<img src="/otherrealm.org/web/themes/otherrealm/img/Internet.png" alt="Internet" title="Internet" class="menuImg">
+							<img src="/otherrealm.org/web/themes/otherrealm/img/Internet.png" alt="Internet"
+								title="Internet" class="menuImg">
 							Internet
 						</a>
 					</p>
@@ -84,4 +87,4 @@ if (!is_active_sidebar('sidebar-1')) {
 			</ul>
 		</nav>
 	</div>
-</aside>
+</aside>-->
