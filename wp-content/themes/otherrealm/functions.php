@@ -57,6 +57,31 @@ if (!function_exists('otherrealm_setup')) :
 		 * If you're building a theme based on otherrealm, use a find and replace
 		 * to change 'otherrealm' to the name of your theme in all the template files.
 		 */
+		function enable_more_buttons($buttons) {
+			$buttons[] = 'fontselect';
+			$buttons[] = 'fontsizeselect';
+			$buttons[] = 'styleselect';
+			$buttons[] = 'backcolor';
+			$buttons[] = 'newdocument';
+			$buttons[] = 'cut';
+			$buttons[] = 'copy';
+			$buttons[] = 'charmap';
+			$buttons[] = 'hr';
+			$buttons[] = 'visualaid';
+			return $buttons;
+		}
+		add_filter("mce_buttons_3", "enable_more_buttons");
+		add_filter('tiny_mce_before_init', 'myformatTinyMCE');
+		function myformatTinyMCE($in) {
+			$in['wordpress_adv_hidden'] = FALSE;
+			return $in;
+		}
+		function my_theme_add_editor_styles() {
+			add_editor_style('/layouts/otherrealm.css');
+			add_editor_style('style.css');
+			add_editor_style('/layouts/menu.css');
+		}
+		add_action('admin_init', 'my_theme_add_editor_styles');
 		load_theme_textdomain('otherrealm', get_template_directory() . '/languages');
 // Add default posts and comments RSS feed links to head.
 		add_theme_support('automatic-feed-links');

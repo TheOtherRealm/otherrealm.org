@@ -1,14 +1,14 @@
-( function( wp ) {
-	if ( ! wp ) {
+(function (wp) {
+	if (!wp) {
 		return;
 	}
 
-	wp.plugins.registerPlugin( 'classic-editor-plugin', {
-		render: function() {
+	wp.plugins.registerPlugin('classic-editor-plugin', {
+		render: function () {
 			var createElement = wp.element.createElement;
 			var PluginMoreMenuItem = wp.editPost.PluginMoreMenuItem;
-			var url = wp.url.addQueryArgs( document.location.href, { 'classic-editor': '', 'classic-editor__forget': '' } );
-			var linkText = lodash.get( window, [ 'classicEditorPluginL10n', 'linkText' ] ) || 'Switch to Classic Editor';
+			var url = wp.url.addQueryArgs(document.location.href, {'classic-editor': '', 'classic-editor__forget': ''});
+			var linkText = lodash.get(window, ['classicEditorPluginL10n', 'linkText']) || 'Switch to Classic Editor';
 
 			return createElement(
 				PluginMoreMenuItem,
@@ -17,7 +17,7 @@
 					href: url,
 				},
 				linkText
-			);
+				);
 		},
-	} );
-} )( window.wp );
+	});
+})(window.wp);
