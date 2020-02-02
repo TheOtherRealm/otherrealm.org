@@ -52,6 +52,18 @@
 				// console.log("always");
 			});
 		});
+		$('#menubar').click(function () {
+			doesItShow = !doesItShow;
+			console.log(doesItShow);
+			if ($('.menu,.menu>*').css('display') === 'none') {
+				console.log($('.menu,.menu>*').css('display'));
+				$('.menu,.menu>*').css('display', 'block');
+			} else {
+				console.log($('.menu,.menu>*').css('display'));
+				$('.menu,.menu>*').css('display', 'none');
+			}
+			;
+		});
 	});
 	console.log($('.fm-form-container'));
 	$('.fm-form-container').css('display', 'block');

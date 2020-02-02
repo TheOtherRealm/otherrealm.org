@@ -167,6 +167,7 @@ body, html {
 	font-size: 1.5em;
 	color: #FFF;
 	text-shadow: 0 2px 2px black;
+	z-index: 500;
 }
 
 /* other */
@@ -441,12 +442,12 @@ p {
 	float: right !important;
 }
 
-.box-shadow-menu {
+/*.box-shadow-menu {
 	display: none;
 	position: absolute;
 	left: .2em;
 	top: 0;
-}
+}*/
 
 .aligncenter {
 	position: relative;
@@ -535,10 +536,12 @@ p {
 .text2{
 	font-size:1.5em;
 	font-family: 'Lora', Serif;
+	z-index: 1;
 }
 .text1{
 	font-size:1.3em;
 	font-family: 'Lora', Serif;
+	z-index: 1;
 }
 /*.hidden{
 	display: none;

@@ -27,5 +27,8 @@ npm-debug.log*
 /node_modules
 /wp-admin
 /wp-includes
-/wp-content/plugins
+/wp-content/plugins/akismet/
+/wp-content/plugins/classic-editor/
+/wp-content/plugins/preserved-html-editor-markup-plus/
+/wp-content/plugins/wordfence/
 /nbproject/private/

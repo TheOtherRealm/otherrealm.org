@@ -20,6 +20,9 @@
 		<?php wp_head(); ?>
 	</head>
 	<body <?php body_class(); ?>>
+		<a class="box-shadow-menu" href="#menu"  id="menubar">
+            &nbsp;<img alt="Menu" src="<?php get_site_url() ?>/otherrealm.org/wp-content/themes/otherrealm/img/Ic_menu_48px.svg">&nbsp;
+        </a>
 		<div id="page" class="site">
 			<a class="skip-link screen-reader-text"
 			   href="#content"><?php esc_html_e('Skip to content', 'otherrealm'); ?></a>

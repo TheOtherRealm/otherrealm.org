@@ -31,6 +31,12 @@
 	float: right;
 	position: relative;
 }
+.box-shadow-menu{
+	display:none;
+	position:absolute;
+	left:.2em;
+	top:0;
+}
 .menuImg {
 	width: 75px;
 	height: auto;
@@ -42,12 +48,13 @@
 	list-style: none;
 }
 .menu {
-	margin: 5px 5px 5px 5px;
+	margin: 1em;
 	padding: 0;
 	margin: 0;
 	font-size: 1.5em;
 	min-width: 9em;
-	width: 30%;
+	/*width:20em;*/
+	height: 100%;
 	float: left;
 	z-index: 99;
 	position: relative;
@@ -61,30 +68,38 @@
 	width: inherit;
 }
 #content {
-	z-index: 100;
-	margin-left: 30%;
+	z-index: 10;
+	margin-left: 20em;
 	margin-top: 3em;
-	position: relative;
+	position: static;
 }
 @media screen and (max-width: 700px) {
 	.menu, .menu>* {
 		display: none;
-		background: white;
-		padding: 0;
-		height: auto;
+		background:white;
+		padding:0;
+		height:auto;
 		z-index: 9999;
+	}
+	.menu{
+		position: absolute;		
+		margin:2em 5px 5px 5px;;
+		box-shadow: 3px 3px 2px 1px  rgba(0,0,0,.7),-1px -1px rgba(0,0,0,.1);
 	}
 	#content {
 		width: 100%;
-		margin: 1%;
+		margin: 0;
+		padding: 1%;
 	}
-	.menu {
-		position: absolute;
-		margin: 2em 5px 5px 5px;
-		box-shadow: 3px 3px 2px 1px rgba(0, 0, 0, .7), -1px -1px rgba(0, 0, 0, .1);
+	#primary{
+		margin-top: 3em;
 	}
 	#menubar {
-		margin-top: 2.2em;
+		/*margin-top: 2.2em;*/
+		position: absolute;
+		top: 0;
+		margin: 0;
+		z-index: 99999;
 	}
 	.box-shadow-menu {
 		display: block;
