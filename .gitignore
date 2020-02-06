@@ -31,5 +31,6 @@ npm-debug.log*
 /wp-content/plugins/classic-editor/
 /wp-content/plugins/preserved-html-editor-markup-plus/
 /wp-content/plugins/wordfence/
-/wp-content/plugins/wysiwyg/tinymce/
+/wp-content/plugins/wysiwyg/js/tinymce/
+/wp-content/themes/otherrealm/js/tinymce/
 /nbproject/private/

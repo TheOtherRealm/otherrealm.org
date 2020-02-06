@@ -20,7 +20,21 @@
   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
   GNU Affero General Public License for more details: <https://www.gnu.org/licenses/agpl-3.0.html>.
  */
-register_activation_hook( __FILE__, 'setup_wysiwyg' );
-register_deactivation_hook( __FILE__, 'takedown_wysiwyg' );
+class Wysiwyg{
+}
+function setup_wysiwyg() {
+	wp_enqueue_script(plugins_url('js/tinymce/js/tinymce/tinymce.min', _FILE_));
+	wp_enqueue_script(plugins_url('js/wysiwyg.js', _FILE_));
+}
+add_action('init','setup_wysiwyg');
+function takedown_wysiwyg() {
+	
+}
+add_action(takedown_wysiwyg());
+function uninstall_wysiwyg() {
+	
+}
+add_action(uninstall_wysiwyg());
+register_activation_hook(__FILE__, 'setup_wysiwyg');
+register_deactivation_hook(__FILE__, 'takedown_wysiwyg');
 register_uninstall_hook(__FILE__, 'uninstall_wysiwyg');
-plugins_url( 'myscript.js', _FILE_ );
