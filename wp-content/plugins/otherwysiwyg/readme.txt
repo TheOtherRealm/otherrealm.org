@@ -1,0 +1,1 @@
+This is a plugin that lets you edit the page as it appears in real life.

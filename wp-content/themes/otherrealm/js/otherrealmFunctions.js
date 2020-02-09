@@ -64,21 +64,21 @@
 			}
 			;
 		});
-		var mainBodyConfig = {
-			selector: '#main',
-			inline: true,
-			plugins: [
-				'lists',
-				'powerpaste',
-				'autolink'
-			],
-			toolbar: [
-				'undo redo | bold italic underline | fontselect fontsizeselect',
-				'forecolor backcolor | alignleft aligncenter alignright alignfull | numlist bullist outdent indent'
-			],
-			powerpaste_word_import: 'clean',
-		};
-		tinymce.init(mainBodyConfig);
+//		var mainBodyConfig = {
+//			selector: '#main',
+//			inline: true,
+//			plugins: [
+//				'lists',
+//				'powerpaste',
+//				'autolink'
+//			],
+//			toolbar: [
+//				'undo redo | bold italic underline | fontselect fontsizeselect',
+//				'forecolor backcolor | alignleft aligncenter alignright alignfull | numlist bullist outdent indent'
+//			],
+//			powerpaste_word_import: 'clean',
+//		};
+//		tinymce.init(mainBodyConfig);
 	});
 	console.log($('.fm-form-container'));
 	$('.fm-form-container').css('display', 'block');

@@ -25,12 +25,14 @@ npm-debug.log*
 /.vscode
 /.history
 /node_modules
+*/node_modules
 /wp-admin
 /wp-includes
 /wp-content/plugins/akismet/
 /wp-content/plugins/classic-editor/
 /wp-content/plugins/preserved-html-editor-markup-plus/
 /wp-content/plugins/wordfence/
+/wp-content/plugins/foliopress-wysiwyg/
 /wp-content/plugins/otherwysiwyg/js/tinymce/
 /wp-content/themes/otherrealm/js/tinymce/
 /nbproject/private/

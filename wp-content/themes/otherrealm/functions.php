@@ -83,9 +83,8 @@ if (!function_exists('otherrealm_setup')) :
 		}
 		add_action('admin_init', 'my_theme_add_editor_styles');
 		load_theme_textdomain('otherrealm', get_template_directory() . '/languages');
-// Add default posts and comments RSS feed links to head.
+		// Add default posts and comments RSS feed links to head.
 		add_theme_support('automatic-feed-links');
-
 		/*
 		 * Let WordPress manage the document title.
 		 * By adding theme support, we declare that this theme does not use a
@@ -93,15 +92,13 @@ if (!function_exists('otherrealm_setup')) :
 		 * provide it for us.
 		 */
 		add_theme_support('title-tag');
-
 		/*
 		 * Enable support for Post Thumbnails on posts and pages.
 		 *
 		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 		 */
 		add_theme_support('post-thumbnails');
-
-// This theme uses wp_nav_menu() in one location.
+		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus(array(
 		  'menu-1' => esc_html__('Primary', 'otherrealm'),
 		));

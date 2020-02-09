@@ -15,6 +15,8 @@
 	<?php otherrealm_post_thumbnail(); ?>
 	<div class="entry-content">
 		<?php
+//		$po=get_post();
+//		print($po->post_content);
 		the_content();
 		wp_link_pages( array(
 			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'otherrealm' ),
