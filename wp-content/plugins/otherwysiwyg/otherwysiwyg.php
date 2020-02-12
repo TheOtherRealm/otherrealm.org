@@ -23,39 +23,51 @@
 class OtherWysiwyg {
 	
 }
-if (current_user_can('edit_posts') || current_user_can('edit_pages')) {
-	function setup_otherwysiwyg() {
-		wp_create_nonce('wysiwyg_editor_plugin');
-		wp_enqueue_script('tinymce', plugins_url('js/tinymce/js/tinymce/tinymce.min', __FILE__), array('jquery'));
+//$user=get_current_user();
+
+function setup_otherwysiwyg() {
+	if (current_user_can('edit_others_posts')) {
+		wp_enqueue_style('otherwysiwygcss', plugins_url('/css/otherwysiwyg.css',__FILE__));
+		wp_enqueue_script('tinymce', plugins_url('js/tinymce/js/tinymce/tinymce.min.js', __FILE__), array('jquery'));
+		wp_enqueue_script('tinymcejquery', plugins_url('js/tinymce/js/tinymce/jquery.tinymce.min.js', __FILE__), array('jquery'));
 		wp_enqueue_script('otherwysiwyg', plugins_url('js/otherwysiwyg.js', __FILE__), array('jquery'));
 		$post_nonce = wp_create_nonce('post_nonce');
-		wp_localize_script('otherwysiwyg', 'wysiwyg_editor_plugin', array('post_body' => 'otherwysiwyg.js', 'nonce' => $post_nonce));
+		wp_localize_script('otherwysiwyg', 'wysiwyg_editor_plugin', 
+			array('ajax_url' => admin_url('admin-ajax.php'), 'nonce' => $post_nonce));
 	}
-	add_action('init', 'setup_otherwysiwyg');
-	function takedown_otherwysiwyg() {
-		wp_deregister_script(plugins_url('js/tinymce/js/tinymce/tinymce.min', __FILE__));
-		wp_deregister_script(plugins_url('js/otherwysiwyg.js', __FILE__));
-	}
-	add_action(takedown_otherwysiwyg());
-	function uninstall_otherwysiwyg() {
-		
-	}
-	add_action(uninstall_otherwysiwyg());
-	add_action('wp_ajax_post_nonce', 'the_ajax_handler');
-	function the_ajax_handler() {
-		check_ajax_referer('post_nonce');
-		$post_id = wp_update_post($_POST['post_body']);
-		if (is_wp_error($post_id)) {
-			$errors = $post_id->get_error_messages();
-			foreach ($errors as $error) {
-				echo $error;
-			}
-		}
-		wp_die(); // all ajax handlers should die when finished
-	}
-	register_activation_hook(__FILE__, 'setup_otherwysiwyg');
-	register_deactivation_hook(__FILE__, 'takedown_otherwysiwyg');
-	register_uninstall_hook(__FILE__, 'uninstall_otherwysiwyg');
-} else {
-	die;
 }
+add_action('init', 'setup_otherwysiwyg');
+function takedown_otherwysiwyg() {
+	wp_deregister_script(plugins_url('js/tinymce/js/tinymce/tinymce.min', __FILE__));
+	wp_deregister_script(plugins_url('js/otherwysiwyg.js', __FILE__));
+}
+//add_action(takedown_otherwysiwyg());
+function uninstall_otherwysiwyg() {
+	
+}
+//	add_action(uninstall_otherwysiwyg());
+add_action('wp_ajax_post_body', 'the_ajax_handler');
+function the_ajax_handler() {
+	check_ajax_referer('post_nonce');
+	$url     = wp_get_referer();
+	$theID = url_to_postid( $url ); 
+	$thePost = array(
+	  'ID'=>$theID,
+	  'post_content'=>$_POST['content']
+	);
+	$post_id = wp_update_post($thePost, true);
+	echo '$post_id='.$theID;
+	if (is_wp_error($post_id)) {
+		$errors = $post_id->get_error_messages();
+		foreach ($errors as $error) {
+			echo $error;
+		}
+	}
+//	} else {
+//		echo "_POST['content']".check_ajax_referer('post_nonce');//. $_POST['content'];
+//	}
+	wp_die(); // all ajax handlers should die when finished
+}
+register_activation_hook(__FILE__, 'setup_otherwysiwyg');
+register_deactivation_hook(__FILE__, 'takedown_otherwysiwyg');
+register_uninstall_hook(__FILE__, 'uninstall_otherwysiwyg');

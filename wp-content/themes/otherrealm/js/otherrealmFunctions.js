@@ -80,7 +80,7 @@
 //		};
 //		tinymce.init(mainBodyConfig);
 	});
-	console.log($('.fm-form-container'));
+//	console.log($('.fm-form-container'));
 	$('.fm-form-container').css('display', 'block');
 })(jQuery);
 

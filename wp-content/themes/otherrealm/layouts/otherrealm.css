@@ -849,3 +849,6 @@ hr {
 .font-bigger{
 	font-size:2em;
 }
+.tox-tinymce-inline{
+	margin-top: -1em;
+}

@@ -34,5 +34,6 @@ npm-debug.log*
 /wp-content/plugins/wordfence/
 /wp-content/plugins/foliopress-wysiwyg/
 /wp-content/plugins/otherwysiwyg/js/tinymce/
+/wp-content/plugins/otherwysiwyg/js/jquery-ui-1.12.1.custom/
 /wp-content/themes/otherrealm/js/tinymce/
 /nbproject/private/

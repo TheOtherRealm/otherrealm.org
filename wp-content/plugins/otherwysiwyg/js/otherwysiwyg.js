@@ -12,32 +12,64 @@
  GNU General Public License for more details: <http://www.gnu.org/licenses/>.
  */
 (function () {
-	$(document).ready(function ($) {
-		var mainBodyConfig = {
-			selector: '#main',
+	jQuery(document).ready(function ($) {
+		let mainBodyConfig = {
+			selector: '.entry-content',
 			inline: true,
-			plugins: [
-				'lists',
-				'powerpaste',
-				'autolink'
-			],
+			plugins: 'print preview paste importcss searchreplace autolink autosave save directionality code visualblocks visualchars fullscreen image media template codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists wordcount imagetools textpattern noneditable help charmap quickbars emoticons',
+			imagetools_cors_hosts: ['picsum.photos'],
+			menubar: 'file edit view insert format tools table help',
+			browser_spellcheck: true,
 			toolbar: [
-				'undo redo | bold italic underline | fontselect fontsizeselect',
-				'forecolor backcolor | alignleft aligncenter alignright alignfull | numlist bullist outdent indent'
+				'undo redo | bold italic underline strikethrough | fontselect fontsizeselect formatselect | alignleft aligncenter alignright alignjustify | outdent indent |  numlist bullist | forecolor backcolor removeformat | pagebreak | charmap emoticons | fullscreen  preview save print | insertfile image media template link anchor codesample | ltr rtl'
 			],
 			powerpaste_word_import: 'clean',
+			mobile: {
+				menubar: true
+			},
+			setup: function (editor) {
+				editor.on('init', function (e) {
+					editor.focus();
+				});
+				editor.on('blur', function (e) {
+					editor.remove();
+					return false;
+				});
+			}
 		};
-		tinymce.init(mainBodyConfig);
-
-		$("#main").change(function () {             //event
-			var this2 = this;                      //use in callback
-			$.post(wysiwyg_editor_plugin.ajax_url, {//POST request
-				_ajax_nonce: wysiwyg_editor_plugin.nonce, //nonce
-				action: "post_body", //action
-				content: this.value                  //data
-			}, function (data) {                    //callback
-				this2.css('border','red');           //insert server response
-			});
+		function createEditor(id) {
+			var ed = new tinymce.Editor(id, mainBodyConfig, tinymce.EditorManager);
+			ed.render();
+			console.log(tinymce.editors);
+		}
+//		$(document).on('focusin', function (e) {
+//			if ($(e.target).closest(".tox-tinymce-aux, .moxman-window, .tam-assetmanager-root").length) {
+//				e.stopImmediatePropagation();
+//			}
+//		});
+		$(".entry-content").attr('id',"tinymceEditContent");
+		$('<button id="tinymceEdit">Edit/Save</button>').appendTo(document.body);
+		$("#tinymceEdit").on('click', function () {
+			console.log($('.tinymceEdit').text());
+			createEditor('tinymceEditContent');
+//			if (!isEditActive) {
+//			} else {
+//			var ed = new tinymce.Editor('.tinymceEdit', mainBodyConfig, tinymce.EditorManager);
+//			ed.render();
+//			var this2 = $('.entry-content');
+////			console.log(this2.html());
+//			$.post(wysiwyg_editor_plugin.ajax_url, {
+//				_ajax_nonce: wysiwyg_editor_plugin.nonce,
+//				action: "post_body",
+//				content: this2.html()
+//			}, function (data) {
+//				console.log(tinymce);
+//			}).done(function (d) {
+////				console.log(d);
+//			}).fail(function (d) {
+//				console.log(d);
+//			});
+////			}
 		});
 	});
-});
+})(jQuery);
