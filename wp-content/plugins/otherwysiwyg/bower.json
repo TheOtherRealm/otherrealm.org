@@ -1,0 +1,13 @@
+{
+	"name": "other-wysiwyg",
+	"version": "1.0.0",
+	"main": "css/otherwysiwyg.css",
+	"ignore": [
+		".jshintrc",
+		"**/*.txt"
+	],
+	"dependencies": {
+	},
+	"devDependencies": {
+	}
+}

@@ -13,6 +13,8 @@
  */
 (function () {
 	jQuery(document).ready(function ($) {
+		var ed = {};
+		var isEditorActive = false;
 		let mainBodyConfig = {
 			selector: '.entry-content',
 			inline: true,
@@ -32,14 +34,12 @@
 					editor.focus();
 				});
 				editor.on('blur', function (e) {
-					editor.remove();
-					return false;
+
 				});
 			}
 		};
 		function createEditor(id) {
-			var ed = new tinymce.Editor(id, mainBodyConfig, tinymce.EditorManager);
-			ed.render();
+
 			console.log(tinymce.editors);
 		}
 //		$(document).on('focusin', function (e) {
@@ -47,29 +47,31 @@
 //				e.stopImmediatePropagation();
 //			}
 //		});
-		$(".entry-content").attr('id',"tinymceEditContent");
+		$(".entry-content").attr('id', "tinymceEditContent");
 		$('<button id="tinymceEdit">Edit/Save</button>').appendTo(document.body);
 		$("#tinymceEdit").on('click', function () {
-			console.log($('.tinymceEdit').text());
-			createEditor('tinymceEditContent');
-//			if (!isEditActive) {
-//			} else {
-//			var ed = new tinymce.Editor('.tinymceEdit', mainBodyConfig, tinymce.EditorManager);
-//			ed.render();
-//			var this2 = $('.entry-content');
-////			console.log(this2.html());
-//			$.post(wysiwyg_editor_plugin.ajax_url, {
-//				_ajax_nonce: wysiwyg_editor_plugin.nonce,
-//				action: "post_body",
-//				content: this2.html()
-//			}, function (data) {
-//				console.log(tinymce);
-//			}).done(function (d) {
-////				console.log(d);
-//			}).fail(function (d) {
+			if (!isEditorActive) {
+				console.log($('#tinymceEditContent'));
+				ed = new tinymce.Editor('tinymceEditContent', mainBodyConfig, tinymce.EditorManager);
+				ed.render();
+				isEditorActive = true;
+			} else {
+				var content = $('.entry-content');
+				$.post(wysiwyg_editor_plugin.ajax_url, {
+					_ajax_nonce: wysiwyg_editor_plugin.nonce,
+					action: "post_body",
+					content: content.html()
+				}, function (data) {
+					ed.remove();
+					isEditorActive = false;
+					return false;
+				}).done(function (d) {
 //				console.log(d);
-//			});
-////			}
+				}).fail(function (d) {
+					console.log(d);
+				});
+			}
+//			console.log(content.html());
 		});
 	});
 })(jQuery);

@@ -36,4 +36,5 @@ npm-debug.log*
 /wp-content/plugins/otherwysiwyg/js/tinymce/
 /wp-content/plugins/otherwysiwyg/js/jquery-ui-1.12.1.custom/
 /wp-content/themes/otherrealm/js/tinymce/
+/wp-content/upgrade/
 /nbproject/private/
