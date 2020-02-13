@@ -26,6 +26,7 @@ npm-debug.log*
 /.history
 /node_modules
 */node_modules
+/wp-config.php
 /wp-admin
 /wp-includes
 /wp-content/plugins/akismet/
