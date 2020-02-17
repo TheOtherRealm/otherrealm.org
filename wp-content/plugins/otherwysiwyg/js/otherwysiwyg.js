@@ -22,6 +22,7 @@
 			imagetools_cors_hosts: ['picsum.photos'],
 			menubar: 'file edit view insert format tools table help',
 			browser_spellcheck: true,
+			fixed_toolbar_container:'#tinymceEditContent',
 			toolbar: [
 				'undo redo | bold italic underline strikethrough | fontselect fontsizeselect formatselect | alignleft aligncenter alignright alignjustify | outdent indent |  numlist bullist | forecolor backcolor removeformat | pagebreak | charmap emoticons | fullscreen  preview save print | insertfile image media template link anchor codesample | ltr rtl'
 			],
@@ -48,13 +49,29 @@
 //			}
 //		});
 		$(".entry-content").attr('id', "tinymceEditContent");
-		$('<button id="tinymceEdit">Edit/Save</button>').appendTo(document.body);
+//		$('<div id="tinymceEditContent"></div>').appendTo(document.body);
+		$('<button id="tinymceEdit">Edit/Save</button>').appendTo(".entry-content");
 		$("#tinymceEdit").on('click', function () {
 			if (!isEditorActive) {
 				console.log($('#tinymceEditContent'));
-				ed = new tinymce.Editor('tinymceEditContent', mainBodyConfig, tinymce.EditorManager);
-				ed.render();
-				isEditorActive = true;
+				const createTinyMenu = new Promise(function (resolve, reject) {
+					ed = new tinymce.Editor('tinymceEditContent', mainBodyConfig, tinymce.EditorManager).render();
+					resolve(ed);
+				});
+				createTinyMenu.then(function (ed) {
+					isEditorActive = true;
+					$('.tox-tinymce-inline').ready().css({
+						"position": "fixed",
+						"left": "0",
+						"top": "1em",
+						"z-index": "99999999"
+					});
+					$(".tox-editor-header").ready().css({
+						"width": "100%",
+						"max-width": "100%"
+					});
+					console.log($(".tox-editor-header"));
+				});
 			} else {
 				var content = $('.entry-content');
 				$.post(wysiwyg_editor_plugin.ajax_url, {

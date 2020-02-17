@@ -14,7 +14,7 @@
 #tinymceEdit{
 	position: fixed;
 	left: 1px;
-	bottom: 6.5px;
+	bottom: 5em;
 	background: #000099;
 	border-radius: .5em;
 	padding: 5px 6px;
@@ -25,4 +25,13 @@
 	text-shadow: 0 2px 2px black;
 	font-size: 2em;
 	z-index: 99999999
+}
+.tox-editor-header{
+	width: 100%;
+}
+#tinymceEditContent > .tox-tinymce-inline{
+	position: fixed;
+	left: 0;
+	top: 1em;
+	z-index: 99999999;
 }
