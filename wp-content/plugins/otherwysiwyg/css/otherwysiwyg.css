@@ -24,14 +24,20 @@
 	color: #FFF;
 	text-shadow: 0 2px 2px black;
 	font-size: 2em;
-	z-index: 99999999
+	z-index: 9999999;
 }
 .tox-editor-header{
 	width: 100%;
 }
-#tinymceEditContent > .tox-tinymce-inline{
+.tox-menu {
+	z-index: 9999999;
+}
+#tinymceEditContent > .tox-tinymce-inline {
 	position: fixed;
 	left: 0;
 	top: 1em;
-	z-index: 99999999;
+	z-index: 1000;
+}
+#wpadminbar{
+	z-index: 0;
 }

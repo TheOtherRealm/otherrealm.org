@@ -38,7 +38,7 @@
 //			$('.menu,.menu>*').css('display', 'block');
 //		}
 		$('#contactTheOtherRealm').click(function () {
-			$.post('http://10.0.0.11/otherrealm.org/wp-content/themes/otherrealm/inc/contacttheotherrealm.php?simplewaytopreventspam=1dft334rfgb54t43wb645e4trf4g5654e5rf34v567ju5e64yega5b65eu6i8jrhya34WT5Y67J~``~', function (data) {
+			$.post('http://127.0.0.1/otherrealm.org/wp-content/themes/otherrealm/inc/contacttheotherrealm.php?simplewaytopreventspam=1dft334rfgb54t43wb645e4trf4g5654e5rf34v567ju5e64yega5b65eu6i8jrhya34WT5Y67J~``~', function (data) {
 				// console.log(data);
 				$('#contactTheOtherRealm').attr({
 					href: "mailto:" + data
