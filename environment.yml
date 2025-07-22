@@ -1,0 +1,53 @@
+name: otherrealm
+channels:
+  - conda-forge
+  # - pytorch
+  # - nvidia
+  # - pytorch3d
+  # - iopath 
+dependencies:
+- python
+- pip
+- numpy
+- scipy
+- matplotlib
+- sympy
+- jupyter
+- ipython
+- ipykernel
+- ipyvtklink
+- ipympl
+- miktex
+- nbconvert
+- pandas
+- panel
+- scikit-learn
+- python-graphviz 
+- cma
+- cadquery
+- fvcore
+- iopath
+- python-duckdb
+- openai
+- keras
+- pip:
+  - huggingface_hub
+  - langgraph
+  - torch
+  - torchvision
+  - torchaudio
+  - gym
+  - langchain
+  - langchain-community
+  - langchain-chroma
+  - langchain-ollama
+  - transformers
+  - tensorflow
+  - ollama
+  - streamlit
+  - tinydb
+  - lmstudio
+  - Authlib
+  - pymongo
+  - pydantic
+
