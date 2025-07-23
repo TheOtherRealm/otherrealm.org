@@ -50,4 +50,5 @@ dependencies:
   - Authlib
   - pymongo
   - pydantic
-
+  - streamlit
+  - haystack-ai
